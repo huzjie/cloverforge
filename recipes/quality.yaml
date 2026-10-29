@@ -1,0 +1,28 @@
+# quality recipe: bigger model, more steps
+model:
+  dim: 64
+  n_layers: 4
+  n_heads: 4
+  n_experts: 6
+  top_k: 2
+  expert_hidden: 128
+  vocab_size: 64
+  max_len: 64
+diffusion:
+  steps: 16
+  schedule: cosine
+  remask: confidence
+  prompt_len: 8
+  gen_len: 32
+  temperature: 1.0
+decision:
+  n_items: 12
+  mode: joint
+training:
+  lr: 0.2
+  epochs: 20
+  target_skill: 0.98
+  seed: 20261029
+serving:
+  host: 127.0.0.1
+  port: 8788

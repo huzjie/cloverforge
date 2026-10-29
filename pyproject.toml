@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloverforge"
+version = "0.1.0"
+description = "Clover-style diffusion language model (dLLM) reference implementation: discrete mask-and-predict diffusion, sparse MoE (top-k + load balance), confidence remasking, and a joint-mode decision head for conflict-free group decisions. Pure Python, zero dependencies."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "cloverforge contributors" }]
+keywords = ["diffusion-language-model", "dllm", "discrete-diffusion", "mixture-of-experts", "moe", "masked-language-model", "decision-model", "non-autoregressive", "zero-dependency"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.scripts]
+cloverforge = "cloverforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cloverforge*"]

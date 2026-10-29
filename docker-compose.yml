@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  cloverforge:
+    build: .
+    container_name: cloverforge
+    ports:
+      - "8788:8788"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

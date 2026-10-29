@@ -1,0 +1,28 @@
+# cloverforge default recipe
+model:
+  dim: 32
+  n_layers: 2
+  n_heads: 4
+  n_experts: 4
+  top_k: 2
+  expert_hidden: 64
+  vocab_size: 64
+  max_len: 32
+diffusion:
+  steps: 8
+  schedule: cosine
+  remask: confidence
+  prompt_len: 8
+  gen_len: 16
+  temperature: 1.0
+decision:
+  n_items: 8
+  mode: joint
+training:
+  lr: 0.25
+  epochs: 12
+  target_skill: 0.95
+  seed: 20261029
+serving:
+  host: 127.0.0.1
+  port: 8788

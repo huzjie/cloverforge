@@ -1,0 +1,28 @@
+# fast recipe: fewer steps, smaller model (smoke-friendly)
+model:
+  dim: 16
+  n_layers: 1
+  n_heads: 2
+  n_experts: 2
+  top_k: 1
+  expert_hidden: 32
+  vocab_size: 64
+  max_len: 16
+diffusion:
+  steps: 4
+  schedule: linear
+  remask: confidence
+  prompt_len: 4
+  gen_len: 8
+  temperature: 1.0
+decision:
+  n_items: 6
+  mode: joint
+training:
+  lr: 0.3
+  epochs: 6
+  target_skill: 0.95
+  seed: 20261029
+serving:
+  host: 127.0.0.1
+  port: 8788
